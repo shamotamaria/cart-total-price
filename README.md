@@ -2,7 +2,7 @@
 
 ### Overview
 
-This project implements a flexible and extensible system for applying coupon discounts to the total amount of a shopping cart using an abstract method approach. By leveraging abstract methods, the implementation provides a scalable solution that allows for easy addition of new coupon types and customization of discount calculation logic.
+This project implements a flexible and extensible system for applying coupon discounts to the total amount of a shopping cart using an abstract method approach. By leveraging abstract method, the implementation provides a scalable solution that allows for easy addition of new coupon types and customization of discount calculation logic.
 
 ### Implementation
 
