@@ -19,10 +19,10 @@ class GenericCoupon extends Coupon {
 
   public function apply(&$items = []) {
     foreach($items as $key => $item) {
-      if($items[$key]['discounted_price']) {
-        $items[$key]['discounted_price'] = $items[$key]['discounted_price']*(1 - $this->discount);
+      if($items[$key]->discounted) {
+        $items[$key]->discounted = $items[$key]->discounted*(1 - $this->discount);
       } else{
-        $items[$key]['discounted_price'] = $item->price*(1 - $this->discount);
+        $items[$key]->discounted = $item->price*(1 - $this->discount);
       }
     }
   }
