@@ -49,7 +49,8 @@ class NextCoupon extends Coupon {
 }
 
 // Class implements method to apply: Take $D off of the Nth product of type T
-class IndividualCoupon extends Coupon{
+class IndividualCoupon extends Coupon {
+  
   private $product_type;
   private $position;
   public $target;
@@ -72,6 +73,7 @@ class IndividualCoupon extends Coupon{
 }
 
 class Cart {
+  
   private $cart;
   private $products;
   private $coupons;
