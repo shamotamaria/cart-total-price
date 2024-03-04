@@ -1,22 +1,19 @@
 <?php
 
-class Cart
-{
+class Cart {
   private $cart;
   private $products;
   private $coupons;
 
   // Apply each coupon on products list
-  private function applyDiscounts()
-  {
+  private function applyDiscounts() {
     foreach ($this->coupons as $coupone) {
       $coupone->apply($this->products);
     }
   }
 
   // Loop through items and calculate total
-  private function calculateTotal()
-  {
+  private function calculateTotal() {
     $total = 0;
     foreach ($this->products as $product) {
       if ($product->discounted) {
@@ -29,8 +26,7 @@ class Cart
   }
 
   // Split coupons and Products
-  private function prepareProductsAndCoupons()
-  {
+  private function prepareProductsAndCoupons() {
     foreach ($cart as $key => $item) {
       if ($item instanceof Product) {
         $this->products[$item->id] = $item;
@@ -45,8 +41,7 @@ class Cart
   }
 
   // Looking for the next item after Coupon in sequence
-  private function findNextItem($key)
-  {
+  private function findNextItem($key) {
     for ($i = $key; $i <= count($this->cart); $i++) {
       if ($this->cart[$i] instanceof Coupon) {
         continue;
@@ -59,8 +54,7 @@ class Cart
   }
 
   // Calculate total
-  public function totalPrice()
-  {
+  public function totalPrice() {
     $this->prepareProductsAndCoupons();
     $this->applyDiscounts();
     return $this->calculateTotal();
