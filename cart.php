@@ -10,7 +10,7 @@ abstract class Coupon {
   protected $id;
   public $discount; // 0.2 || 2
 
-  abstract public function apply($items);
+  abstract public function apply(&$items);
 
 }
 
