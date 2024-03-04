@@ -89,7 +89,7 @@ class Cart {
   private function calculateTotal() {
     $total = 0;
     foreach($this->products as $product) {
-      if($product->discounted_price) {
+      if($product->discounted) {
         $total += $product->discounted;
       } else {
         $total += $product->price;
