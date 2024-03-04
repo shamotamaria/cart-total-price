@@ -1,5 +1,4 @@
 <?php
-// phpcs:disable
 class Product {
   public $id;
   public $type;
@@ -14,6 +13,7 @@ abstract class Coupon {
   abstract public function apply($items);
 
 }
+
 // Class implements method to apply: Take N% off each individual product in the cart
 class GenericCoupon extends Coupon {
 
@@ -27,6 +27,7 @@ class GenericCoupon extends Coupon {
     }
   }
 }
+
 // Class implements method to apply: Take P% off the next product in the cart
 class NextCoupon extends Coupon {
 
@@ -46,6 +47,7 @@ class NextCoupon extends Coupon {
     }
   }
 }
+
 // Class implements method to apply: Take $D off of the Nth product of type T
 class IndividualCoupon extends Coupon{
   private $product_type;
@@ -80,6 +82,7 @@ class Cart {
      $coupone->apply($this->products);
     }
   }
+
   // Loop through items and calculate total
   private function calculateTotal() {
     $total = 0;
@@ -92,6 +95,7 @@ class Cart {
     }
     return $total;
   }
+
   // Split coupons and Products
   private function prepareProductsAndCoupons() {
     foreach($cart as $key => $item) {
